@@ -1,0 +1,10 @@
+.owl {
+  width: 90%;
+  height: 80vh;
+  display: inline-block;
+}
+
+.visualization {
+  margin: 1em;
+  text-align: center;
+}

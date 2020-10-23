@@ -1,0 +1,1116 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/joeri/ontologies/2020/2/untitled-ontology-16#"
+     xml:base="http://www.semanticweb.org/joeri/ontologies/2020/2/untitled-ontology-16"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:GTD-bombings="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings">
+        <rdfs:description>This is our MO ontology extended with some data-derived classes and individuals.</rdfs:description>
+        <rdfs:label>GTD bombings</rdfs:label>
+        <owl:versionInfo>Example ontology for the MO knowledge base</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#description -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Modus_operandi"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Modus_operandi"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#requires -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#requires">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#hasDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Bombing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Bombing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Modus_operandi"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Detonate_bomb"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosive_is_prepared"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Present_at_target"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Ready_to_detonate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target_is_harmed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosives"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance">
+        <rdfs:comment>Details of MOs not captured in states/actions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Claim_incident -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Claim_incident">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBomb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBomb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Claim_incident"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBombOfCivilianTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBombOfCivilianTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBombOfGovernmentTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBombOfGovernmentTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBombOfMilitaryTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBombOfMilitaryTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Claim_incident"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicleOfCivilianTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicleOfCivilianTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicleOfGovernmentTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicleOfGovernmentTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicleOfMilitaryTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicleOfMilitaryTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ClaimedSuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Detonate_bomb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Detonate_bomb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Claim_incident"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator_is_dead"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target_is_harmed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Election-related -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Election-related">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosive_is_prepared -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosive_is_prepared">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Present_at_target"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosives -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosives">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Means"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#GovernmentPersonnel_excludingpolice.military_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#GovernmentPersonnel_excludingpolice.military_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target/Victim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#HeadOfState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#HeadOfState">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state"/>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Intelligence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Intelligence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#LaborUnionRelated -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#LaborUnionRelated">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Location">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Means -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Means">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target/Victim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryCheckpoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryCheckpoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryMaritime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryMaritime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryPersonnel_soldiers.troops.officers.forces_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryPersonnel_soldiers.troops.officers.forces_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryWeaponry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryWeaponry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Modus_operandi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Modus_operandi">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Location"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Means"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Time"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target/Victim"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>MO scheme</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#NATO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#NATO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#NamedCivilian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#NamedCivilian">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Paramilitary -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Paramilitary">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator_is_dead -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator_is_dead">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state"/>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Present_at_target -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Present_at_target">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Physical_state"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Ready_to_detonate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Protester -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Protester">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PublicArea_garden.Parkinglot.garage.beach.Publicbuilding.camp_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PublicArea_garden.Parkinglot.garage.beach.Publicbuilding.camp_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Ready_to_detonate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Ready_to_detonate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Detonate_bomb"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ReligionIdentified -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#ReligionIdentified">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Bombing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#contains"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Perpetrator_is_dead"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByHumanBomb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByHumanBomb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Suicide_carriedBodilyByHumanbeing_"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByVehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByVehicle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Vehicle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Suicide_carriedBodilyByHumanbeing_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Suicide_carriedBodilyByHumanbeing_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosives"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target_is_harmed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target_is_harmed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Consequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Time -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Time">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBomb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBomb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByHumanBomb"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBombOfCivilianTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBombOfCivilianTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBombOfGovernmentTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBombOfGovernmentTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBombOfMilitaryTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBombOfMilitaryTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByHumanBomb"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#SuicideBombingByVehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicleOfCivilianTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicleOfCivilianTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicleOfGovernmentTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicleOfGovernmentTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicleOfMilitaryTargets -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicleOfMilitaryTargets">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnclaimedSuicideBombingByVehicle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#entails"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Vehicle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Vehicle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Explosives"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#GovernmentBuilding/Facility/Office -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#GovernmentBuilding/Facility/Office">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#House/Apartment/Residence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#House/Apartment/Residence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Judge/Attorney/Court -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Judge/Attorney/Court">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Laborer_General_/OccupationIdentified -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Laborer_General_/OccupationIdentified">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Marketplace/Plaza/Square -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Marketplace/Plaza/Square">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Memorial/Cemetery/Monument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Memorial/Cemetery/Monument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryBarracks/Base/Headquarters/Checkpost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryBarracks/Base/Headquarters/Checkpost">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryRecruitingStation/Academy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryRecruitingStation/Academy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryTransportation/Vehicle_excludingconvoys_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryTransportation/Vehicle_excludingconvoys_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryUnit/Patrol/Convoy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#MilitaryUnit/Patrol/Convoy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Military"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Museum/CulturalCenter/CulturalHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Museum/CulturalCenter/CulturalHouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PoliticalPartyMember/Rally -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PoliticalPartyMember/Rally">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PoliticianOrPoliticalPartyMovement/Meeting/Rally -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PoliticianOrPoliticalPartyMovement/Meeting/Rally">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Government_General_"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target/Victim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Procession/Gathering_funeral.wedding.birthday.religious_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Procession/Gathering_funeral.wedding.birthday.religious_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isFollowedBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Action"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#isPrecededBy"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Initiating_state"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Psychological_state/Goal"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Race/EthnicityIdentified -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Race/EthnicityIdentified">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Refugee_includingCamps/IDP/AsylumSeekers_ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Refugee_includingCamps/IDP/AsylumSeekers_">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#State/Action">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#requires"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Circumstance"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>States, actions, behaviours, scenes, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target/Victim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Target/Victim">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnnamedCivilian/Unspecified -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#UnnamedCivilian/Unspecified">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Vehicles/Transportation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Vehicles/Transportation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Village/City/Town/Suburb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#Village/City/Town/Suburb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/joeri/ontologies/2020/2/GTD-bombings#PrivateCitizens&amp;Property"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

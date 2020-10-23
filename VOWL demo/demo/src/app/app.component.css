@@ -1,0 +1,26 @@
+/* .disclaimer {
+  width: 100%;
+  background-color: lightblue;
+  height: 2em;
+  position: fixed;
+  bottom:0px;
+  margin-top: 2em;
+} */
+
+.signature {
+  text-align: center;
+  margin-top: 10em;
+  margin-bottom: 5em;
+}
+
+.logos{
+  display: inline-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: space-between;
+  width: 50%;
+}
+
+#header {
+  text-align: center;
+}

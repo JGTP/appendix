@@ -1,0 +1,9 @@
+.timeline {
+  width: 80%;
+  display: inline-block;
+}
+
+.parent {
+  text-align: center;
+  margin: 1em;
+}
