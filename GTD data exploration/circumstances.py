@@ -42,6 +42,9 @@ def construct_location(row):
     location = str(location).replace(')', '_')
     location = str(location).replace(',', '.')
     location = str(location).replace(':', '--')
+    target = str(target).replace('#', '--')
+    target = str(target).replace(' ', ' ')  # thin space
+    target = str(target).replace('  ', '.')  # double space
     return location
 
 
@@ -56,4 +59,7 @@ def construct_target(row):
         target = str(target).replace(')', '_')
         target = str(target).replace(',', '.')
         target = str(target).replace(':', '--')
+        target = str(target).replace('#', '--')
+        target = str(target).replace(' ', ' ')  # thin space
+        target = str(target).replace('  ', '.')  # double space
     return target

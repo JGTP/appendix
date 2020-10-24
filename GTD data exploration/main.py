@@ -19,14 +19,14 @@ def label_data(rawDataPath, outputSampling=False, test=False):
     if os.path.isfile(rawDataPath) == False:
         if test == False:
             prepare_raw_data(
-                "../../OWL/MOs/GTD_data/globalterrorismdb_0919dist.xlsx", False)
+                "../OWL/MOs/GTD_data/globalterrorismdb_0919dist.xlsx", False)
         else:
             prepare_raw_data(
-                "../../OWL/MOs/GTD_data/test.xlsx", True)
+                "../OWL/MOs/GTD_data/test.xlsx", True)
     if outputSampling:
-        outputPath = "../../OWL/MOs/GTD_data/labelledDataSample.xlsx"
+        outputPath = "../OWL/MOs/GTD_data/labelledDataSample.xlsx"
     else:
-        outputPath = "../../OWL/MOs/GTD_data/labelledData.xlsx"
+        outputPath = "../OWL/MOs/GTD_data/labelledData.xlsx"
     try:
         os.remove(outputPath)
         print('Existing output file removed.')
@@ -91,7 +91,7 @@ def categorise_MO(df, outputPath, outputSampling=False):
 
 
 def categorise(row):
-    dftax = pd.read_excel("../../OWL/MOs/GTD_data/taxonomy.xlsx")
+    dftax = pd.read_excel("../OWL/MOs/GTD_data/taxonomy.xlsx")
     attacktype1 = row['attacktype1_txt']
     suicide = row['suicide']
     weapsubtype1 = row['weapsubtype1_txt']
@@ -126,8 +126,7 @@ def classify(raw_data_path, feature, groups=[], test=False):
 #     # print(df.head())x
 
 
-# Run with Jupyter notebook
-rawDataPath = "../../OWL/MOs/GTD_data/rawData.xlsx"
+rawDataPath = "../OWL/MOs/GTD_data/rawData.xlsx"
 label_data(rawDataPath, test=False)
 # group1 = 'Islamic State of Iraq and the Levant (ISIL)'
 # group2 = "Taliban"
