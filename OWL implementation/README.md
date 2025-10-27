@@ -1,6 +1,6 @@
 # README
 
-This includes supplementary material for a 2020 ISI paper. DO NOT REMOVE.
+This includes supplementary material for a 2020 ISI paper. 
 
 ### Contents
 
@@ -9,4 +9,6 @@ This includes supplementary material for a 2020 ISI paper. DO NOT REMOVE.
 
 ### How to use OWL files?
 
-OWL files can be opened in WebVOWL (<http://vowl.visualdataweb.org/webvowl.html>). Simply go to 'Run WebVOWL' -> 'Ontology' -> 'Select ontology file' and upload the downloaded OWL file. Alternatively, the OWL files can be opened in Protégé (<https://protege.stanford.edu/>).
+Previously, OWL files could be opened in WebVOWL by navigating to the VisualDataWeb website. You could simply go to 'Run WebVOWL' -> 'Ontology' -> 'Select ontology file' and upload the downloaded OWL file. This is no longer the case. Instead, go here: <https://github.com/VisualDataWeb/WebVOWL>.
+
+Alternatively, the OWL files can be opened in Protégé (<https://protege.stanford.edu/>).
